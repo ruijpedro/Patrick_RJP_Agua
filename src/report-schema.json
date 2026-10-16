@@ -1,0 +1,591 @@
+[
+  {
+    "name": "Menu Principal",
+    "visuals": []
+  },
+  {
+    "name": "1. Consumos por contador",
+    "visuals": [
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Unidade)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Morada de Consumo)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Tipo de utilização)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Linha)"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Faturação mensal.N.º Contador SAP"
+          }
+        ]
+      },
+      {
+        "type": "areaChart",
+        "fields": [
+          {
+            "role": "Y",
+            "ref": "Sum(Contadores Primários. Consumo(m3))"
+          },
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Ano"
+          }
+        ]
+      },
+      {
+        "type": "textFilter25A4896A83E0487089E2B90C9AE57C8A",
+        "fields": [
+          {
+            "role": "field",
+            "ref": "Contadores Primários.Localização"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Cliente/Fornecedor)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Nº de Contador)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Estado atual)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Calibre (mm))"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Telemetria)"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Linha"
+          },
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Localização"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "2. Consumos por Unidade",
+    "visuals": [
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários. Consumo(m3))"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Unidade"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.N.º Contador SAP)"
+          }
+        ]
+      },
+      {
+        "type": "tableEx",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.N.º Contador SAP)"
+          },
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Localização"
+          },
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Tipo de utilização"
+          }
+        ]
+      },
+      {
+        "type": "clusteredColumnChart",
+        "fields": [
+          {
+            "role": "Y",
+            "ref": "Sum(Contadores Primários. Consumo(m3))"
+          },
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Unidade"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Ano"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "3. Evolução dos consumos por Unidade",
+    "visuals": [
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Unidade"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.N.º Contador SAP)"
+          }
+        ]
+      },
+      {
+        "type": "columnChart",
+        "fields": [
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Unidade"
+          },
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Ano"
+          },
+          {
+            "role": "Y",
+            "ref": "Sum(Contadores Primários. Consumo(m3))"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Ano"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "4. Faturação por contador",
+    "visuals": [
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Unidade)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Morada de Consumo)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Tipo de utilização)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Linha)"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.N.º Contador SAP1"
+          }
+        ]
+      },
+      {
+        "type": "clusteredColumnChart",
+        "fields": [
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Ano"
+          },
+          {
+            "role": "Y",
+            "ref": "Sum(Contadores Primários.Faturação (€))"
+          }
+        ]
+      },
+      {
+        "type": "textFilter25A4896A83E0487089E2B90C9AE57C8A",
+        "fields": [
+          {
+            "role": "field",
+            "ref": "Contadores Primários.Localização"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Cliente/Fornecedor)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Nº de Contador)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Estado atual)"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Calibre (mm))"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Contadores Primários.Telemetria)"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Linha"
+          },
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Localização"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "5. Faturação por Unidade",
+    "visuals": [
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.Faturação (€))"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Unidade"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.N.º Contador SAP)"
+          }
+        ]
+      },
+      {
+        "type": "tableEx",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.N.º Contador SAP)"
+          },
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Localização"
+          },
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Tipo de utilização"
+          }
+        ]
+      },
+      {
+        "type": "clusteredColumnChart",
+        "fields": [
+          {
+            "role": "Y",
+            "ref": "Sum(Contadores Primários.Faturação (€))"
+          },
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Unidade"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Ano"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "6. Evolução da faturação por Unidade",
+    "visuals": [
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Unidade"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Sum(Contadores Primários.N.º Contador SAP)"
+          }
+        ]
+      },
+      {
+        "type": "columnChart",
+        "fields": [
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Unidade"
+          },
+          {
+            "role": "Category",
+            "ref": "Contadores Primários.Ano"
+          },
+          {
+            "role": "Y",
+            "ref": "Sum(Contadores Primários.Faturação (€))"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Contadores Primários.Ano"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "7. Evolução mensal da faturação por contador",
+    "visuals": [
+      {
+        "type": "lineChart",
+        "fields": [
+          {
+            "role": "Category",
+            "ref": "Faturação mensal.Ano"
+          },
+          {
+            "role": "Category",
+            "ref": "Faturação mensal.Nome do Mês"
+          },
+          {
+            "role": "Y",
+            "ref": "Sum(Faturação mensal.Valor/moeda ACC)"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Faturação mensal.N.º Contador SAP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Instalações RepowerIP",
+    "visuals": [
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Instalações RepowerIP.Localização)"
+          }
+        ]
+      },
+      {
+        "type": "areaChart",
+        "fields": [
+          {
+            "role": "Category",
+            "ref": "Instalações RepowerIP.Ano"
+          },
+          {
+            "role": "Y",
+            "ref": "Sum(Instalações RepowerIP.Consumos (m3))"
+          }
+        ]
+      },
+      {
+        "type": "textFilter25A4896A83E0487089E2B90C9AE57C8A",
+        "fields": [
+          {
+            "role": "field",
+            "ref": "Instalações RepowerIP.Localização"
+          }
+        ]
+      },
+      {
+        "type": "slicer",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Instalações RepowerIP.Localização"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "fields": [
+          {
+            "role": "Values",
+            "ref": "Min(Instalações RepowerIP.N.º Contador(Equipamento SAP))"
+          }
+        ]
+      }
+    ]
+  }
+]
