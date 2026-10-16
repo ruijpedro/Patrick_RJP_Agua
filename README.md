@@ -34,3 +34,7 @@ npm run windows:package
 - O instalador Windows não é assinado e pode mostrar avisos SmartScreen.
 - iOS poderá ser acrescentado com Capacitor e compilação em macOS/Xcode.
 - Não publicar o ficheiro `.pbix` ou credenciais num repositório público sem autorização.
+
+
+## V1.2 — Correção Android SDK
+Corrigido o workflow Android: `setup-android@v3` deixa de solicitar o pacote obsoleto `tools`, instalando explicitamente `platform-tools`, `platforms;android-35` e `build-tools;35.0.0`. O APK continua a ser produzido em modo debug no GitHub Actions. A compilação ainda precisa de validação no GitHub.
