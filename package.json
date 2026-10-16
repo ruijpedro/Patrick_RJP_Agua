@@ -1,18 +1,52 @@
 {
   "name": "patrick-rjp-agua",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "cap open android",
+    "windows:dev": "electron .",
+    "windows:package": "npm run build && electron-builder --win nsis",
+    "windows:portable": "npm run build && electron-builder --win portable"
   },
   "dependencies": {
     "vite": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "lucide-react": "^0.468.0"
+    "lucide-react": "^0.468.0",
+    "@capacitor/core": "^7.4.0",
+    "@capacitor/android": "^7.4.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.0",
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "pt.rjp.patrickagua",
+    "productName": "Patrick RJP_Agua",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
 }

@@ -1,18 +1,36 @@
-# Patrick RJP_Agua V1.0 — Protótipo inicial
+# Patrick RJP_Agua V1.1
 
-Extraído da estrutura do ficheiro PBIX fornecido pelo utilizador.
+Protótipo de 9 páginas baseado na estrutura do relatório Power BI fornecido. **Os dados e visuais do Power BI ainda não estão integrados.**
 
-## Executar
+## Compilar pelo GitHub
+1. Criar repositório e carregar **o conteúdo desta pasta** na raiz, incluindo `.github/workflows`.
+2. Em **Actions**, selecionar **Android APK** > **Run workflow**. No fim, descarregar o artefacto APK (versão de teste, assinatura debug).
+3. Em **Actions**, selecionar **Windows EXE** > **Run workflow**. Descarregar o artefacto EXE (instalador NSIS, não assinado).
+4. Para publicar a WebApp, em **Settings > Pages**, escolher **Source: GitHub Actions** e executar **WebApp GitHub Pages**.
 
-Requer Node.js 22+. Execute `npm install` e `npm run dev`. Para compilar: `npm run build`.
+## Desenvolvimento local
+Requer Node.js 22+.
+```
+npm install
+npm run dev
+npm run build
+```
 
-## Estado
+Android local (requer Android SDK e Java 21):
+```
+npx cap add android
+npm run android:sync
+cd android && ./gradlew assembleDebug
+```
 
-- Navegação responsiva com as nove páginas originais.
-- Sem dados fictícios.
-- Ainda não reproduz as medidas DAX, filtros nem gráficos reais.
-- Não inclui ainda projetos Android/iOS/Windows nem instaladores. A implementação multiplataforma deverá ser feita depois de validar as fontes de dados, usando Capacitor (mobile) e Tauri (Windows).
+Windows local (preferencialmente em Windows):
+```
+npm run windows:package
+```
 
-## Próximo passo
-
-Definir fonte de dados (exportação CSV/Excel, API autenticada, ou outra) e recriar medidas e visuais do PBIX. O PBIX pode conter dados ou modelos que necessitam extração específica e validação.
+## Notas
+- Não inclui APK ou EXE já compilados; o GitHub Actions gera-os.
+- O APK debug serve para instalação/testes. Para distribuição final é necessária assinatura de lançamento.
+- O instalador Windows não é assinado e pode mostrar avisos SmartScreen.
+- iOS poderá ser acrescentado com Capacitor e compilação em macOS/Xcode.
+- Não publicar o ficheiro `.pbix` ou credenciais num repositório público sem autorização.
