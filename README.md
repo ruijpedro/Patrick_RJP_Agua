@@ -13,3 +13,7 @@ No Power BI exportar as tabelas **Contadores Primários**, **Faturação mensal*
 GitHub Actions: Android APK, Windows EXE e GitHub Pages. Para compilar Android localmente: `npm run build && npx cap add android && npx cap sync android`.
 
 **Nota:** A integração em tempo real com o dataset Power BI exige API, permissões e autenticação Microsoft. Não incluída nesta versão.
+
+
+## Correcao Windows V1.3.1
+O electron-builder usa --publish never para nao exigir GH_TOKEN. O instalador e guardado nos Artifacts do GitHub Actions.
