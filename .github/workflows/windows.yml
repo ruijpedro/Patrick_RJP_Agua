@@ -1,1 +1,19 @@
-
+name: Windows EXE
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - run: npm run windows:package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Patrick_RJP_Agua_Windows_EXE
+          path: release/*.exe
